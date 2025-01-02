@@ -31,7 +31,7 @@ DiscordUrlTextLabel["BackgroundTransparency"] = 1;
 DiscordUrlTextLabel["AnchorPoint"] = Vector2.new(0.5, 0.5);
 DiscordUrlTextLabel["Size"] = UDim2.new(0, 200, 0, 50);
 DiscordUrlTextLabel["BorderColor3"] = Color3.fromRGB(142, 66, 133);
-DiscordUrlTextLabel["Text"] = [[discord.gg/tsuoscripts]];
+DiscordUrlTextLabel["Text"] = [[discord.gg/Star]];
 DiscordUrlTextLabel["Position"] = UDim2.new(0.5, 0, -0.025, 0);
 
 local DiscordUrlUiStroke = Instance.new("UIStroke", DiscordUrlTextLabel);
@@ -201,7 +201,7 @@ DiscordUrlTextLabel["BackgroundTransparency"] = 1;
 DiscordUrlTextLabel["AnchorPoint"] = Vector2.new(0.5, 0.5);
 DiscordUrlTextLabel["Size"] = UDim2.new(0, 200, 0, 50);
 DiscordUrlTextLabel["BorderColor3"] = Color3.fromRGB(142, 66, 133);
-DiscordUrlTextLabel["Text"] = [[discord.gg/tsuoscripts]];
+DiscordUrlTextLabel["Text"] = [[discord.gg/Star]];
 DiscordUrlTextLabel["Position"] = UDim2.new(0.5, 0, -0.025, 0);
 
 local DiscordUrlUiStroke = Instance.new("UIStroke", DiscordUrlTextLabel);
@@ -371,7 +371,7 @@ DiscordUrlTextLabel["BackgroundTransparency"] = 1;
 DiscordUrlTextLabel["AnchorPoint"] = Vector2.new(0.5, 0.5);
 DiscordUrlTextLabel["Size"] = UDim2.new(0, 200, 0, 50);
 DiscordUrlTextLabel["BorderColor3"] = Color3.fromRGB(142, 66, 133);
-DiscordUrlTextLabel["Text"] = [[discord.gg/tsuoscripts]];
+DiscordUrlTextLabel["Text"] = [[discord.gg/Star]];
 DiscordUrlTextLabel["Position"] = UDim2.new(0.5, 0, -0.025, 0);
 
 local DiscordUrlUiStroke = Instance.new("UIStroke", DiscordUrlTextLabel);
@@ -541,7 +541,7 @@ DiscordUrlTextLabel["BackgroundTransparency"] = 1;
 DiscordUrlTextLabel["AnchorPoint"] = Vector2.new(0.5, 0.5);
 DiscordUrlTextLabel["Size"] = UDim2.new(0, 200, 0, 50);
 DiscordUrlTextLabel["BorderColor3"] = Color3.fromRGB(142, 66, 133);
-DiscordUrlTextLabel["Text"] = [[discord.gg/tsuoscripts]];
+DiscordUrlTextLabel["Text"] = [[discord.gg/Star]];
 DiscordUrlTextLabel["Position"] = UDim2.new(0.5, 0, -0.025, 0);
 
 local DiscordUrlUiStroke = Instance.new("UIStroke", DiscordUrlTextLabel);
@@ -1581,3 +1581,4 @@ CFrameBoss = CFrame.new(-5415.3920898438, 505.74133300781, -2814.0166015625)
 end
 end
 end
+
