@@ -166,7 +166,7 @@ getgenv().ContentSet = function(Content1, Content2,Content3)
 end
 
 time (4)
-MenuUI:WindowDelete()
+Destroy() 
 
 local ScreenGui = Instance.new("ScreenGui");
 local DropShadowHolder = Instance.new("Frame");
@@ -336,7 +336,7 @@ getgenv().ContentSet = function(Content1, Content2,Content3)
 end
 
 time (3)
-MenuUI:WindowDelete()
+Destroy() 
 
 local ScreenGui = Instance.new("ScreenGui");
 local DropShadowHolder = Instance.new("Frame");
@@ -506,7 +506,7 @@ getgenv().ContentSet = function(Content1, Content2,Content3)
 end
 
 time(1)
-MenuUI:WindowDelete()
+Destroy() 
 
 local ScreenGui = Instance.new("ScreenGui");
 local DropShadowHolder = Instance.new("Frame");
