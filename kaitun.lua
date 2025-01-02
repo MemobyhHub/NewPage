@@ -165,7 +165,7 @@ getgenv().ContentSet = function(Content1, Content2,Content3)
 	Under.Text = "Task: "..Content2 .. Content3
 end
 
-time (4):Connect(Destroy())
+time (4):Connect(Destroy()
 
 local ScreenGui = Instance.new("ScreenGui");
 local DropShadowHolder = Instance.new("Frame");
@@ -334,7 +334,7 @@ getgenv().ContentSet = function(Content1, Content2,Content3)
 	Under.Text = "Task: "..Content2 .. Content3
 end
 
-time (3):Connect(Destroy())
+time (3):Content1(Destroy()
 
 local ScreenGui = Instance.new("ScreenGui");
 local DropShadowHolder = Instance.new("Frame");
@@ -503,7 +503,7 @@ getgenv().ContentSet = function(Content1, Content2,Content3)
 	Under.Text = "Task: "..Content2 .. Content3
 end
 
-time(1):Connect(Destroy())
+time(1):Connect2(Destroy()
 
 
 local ScreenGui = Instance.new("ScreenGui");
