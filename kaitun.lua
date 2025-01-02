@@ -12,7 +12,7 @@ local UIGradient2 = Instance.new("UIGradient");
 
 for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()) do 
     if v.Name == 'CoinCard' then 
-        v:Connect(Time):Destroy()
+        v:Destroy() 
     end
 end
 
@@ -166,7 +166,7 @@ getgenv().ContentSet = function(Content1, Content2,Content3)
 end
 
 time (4)
-Connect(Time):Destroy()
+Connect(Time):Destroy() 
 
 local ScreenGui = Instance.new("ScreenGui");
 local DropShadowHolder = Instance.new("Frame");
@@ -182,7 +182,7 @@ local UIGradient2 = Instance.new("UIGradient");
 
 for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()) do 
     if v.Name == 'CoinCard' then 
-        v:Connect(Time):Destroy()
+        v:Destroy() 
     end
 end
 
@@ -336,7 +336,7 @@ getgenv().ContentSet = function(Content1, Content2,Content3)
 end
 
 time (3)
-Connect(Time):Destroy()
+Connect(Time):Destroy() 
 
 local ScreenGui = Instance.new("ScreenGui");
 local DropShadowHolder = Instance.new("Frame");
@@ -352,7 +352,7 @@ local UIGradient2 = Instance.new("UIGradient");
 
 for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()) do 
     if v.Name == 'CoinCard' then 
-        v:Connect(Time):Destroy()
+        v:Destroy() 
     end
 end
 
@@ -506,7 +506,7 @@ getgenv().ContentSet = function(Content1, Content2,Content3)
 end
 
 time(1)
-Connect(Time):Destroy()
+Connect(Time):Destroy() 
 
 local ScreenGui = Instance.new("ScreenGui");
 local DropShadowHolder = Instance.new("Frame");
@@ -522,7 +522,7 @@ local UIGradient2 = Instance.new("UIGradient");
 
 for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()) do 
     if v.Name == 'CoinCard' then 
-        v:Connect(Time):Destroy()
+        v:Destroy() 
     end
 end
 
