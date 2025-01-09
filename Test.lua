@@ -2152,7 +2152,7 @@ function autoStats()
         if Stats_Melee < MaxLevel then 
             FireAddPoint('Melee',MaxLevel-Stats_Melee)
             autoStats()
-        elseif Stats_Def < 2550 then 
+        elseif Stats_Def < 2600 then 
             FireAddPoint('Defense',MaxLevel-Stats_Def)
             autoStats()
         else 
@@ -3507,6 +3507,9 @@ local Top = Instance.new("TextLabel");
 local UIGradient1 = Instance.new("UIGradient");
 local Under = Instance.new("TextLabel");
 local UIGradient2 = Instance.new("UIGradient");
+local JoinTextBox = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextBox = Instance.new("TextBox")
 
 for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui:GetChildren()) do 
     if v.Name == 'CoinCard' then 
@@ -3663,6 +3666,88 @@ getgenv().ContentSet = function(Content1, Content2,Content3)
 	Under.Text = "Task: "..Content2 .. Content3
 end
 
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+    Frame.Parent = JoinTextBox
+    Frame.BackgroundColor3 = Color3.new(255, 255, 255)
+    Frame.BackgroundTransparency = 0.4
+    Frame.BorderMode = 'Middle'
+    Frame.BorderColor3 = Color3.new(250, 250, 250)
+    Frame.BorderSizePixel = 5
+    Frame.Position = UDim2.new(0.5, 0, 0.7, 0)
+    Frame.Size = UDim2.new(0, 400, 0, 50)
+    local UIStroke = Instance.new("UIStroke");
+    
+    
+    UIStroke.Color = Color3.fromRGB(255, 255, 255)
+    UIStroke.Thickness = 2.5
+    UIStroke.Parent = Frame
+    
+    
+    local TextLabel = Instance.new("TextLabel")
+     
+    TextLabel.Parent = Frame
+    TextLabel.BackgroundColor3 = Color3.new(0.623529, 0.623529, 0.623529)
+    TextLabel.BackgroundTransparency = 1
+    TextLabel.BorderColor3 = Color3.new(0, 0, 0)
+    TextLabel.BorderSizePixel = 0
+    TextLabel.AnchorPoint = Vector2.new(0, 0)
+    TextLabel.Size = UDim2.new(0, 400, 0, 50)
+    TextLabel.Font = Enum.Font.Highway
+    TextLabel.TextColor3 = Color3.new(1, 1, 1)
+    TextLabel.TextSize = 20
+    TextLabel.Text = 'Enter a Job Id or join Job Id script right here.'
+    TextLabel.TextWrapped = true
+    --TextLabel.TextScaled = true
+    TextLabel.ZIndex = 0
+    local gadient = Instance.new("UIGradient");
+    gadient.Parent = UIStroke
+    gadient.Color = ColorSequence.new(TextBoxGradientColorTable)
+    
+    local gadient = Instance.new("UIGradient");
+    gadient.Parent = TextLabel
+    gadient.Color = ColorSequence.new(TextBoxGradientColorTable)
+    
+    gadient = Instance.new("UIGradient");
+    gadient.Parent = Frame
+    gadient.Color = ColorSequence.new(TextBoxGradientColorTable)
+    
+    
+    
+    TextBox.Parent = Frame
+    TextBox.BackgroundColor3 = Color3.new(255, 255, 255)
+    TextBox.BackgroundTransparency = 1
+    TextBox.BorderColor3 = Color3.new(0, 0, 0)
+    TextBox.BorderSizePixel = 0
+    TextBox.Size = UDim2.new(0, 400, 0, 50)
+    TextBox.Font = Enum.Font.Highway
+    TextBox.Text = ""
+    TextBox.TextColor3 = Color3.new(1, 1, 1)
+    TextBox.TextSize = 14
+    TextBox.ZIndex = 1
+    
+    -- Sự kiện khi ô nhập liệu được click vào
+    TextBox.Focused:Connect(function()
+        TextLabel.Visible = false
+    end)
+    
+    -- Sự kiện khi ô nhập liệu bị bỏ chọn hoặc người dùng nhấn Enter
+    TextBox.FocusLost:Connect(function(enterPressed)
+        if enterPressed then
+            if TextBoxJoinCallback then 
+                TextBoxJoinCallback(TextBox.Text)
+            end
+            TextLabel.Text = TextBox.Text
+        else
+            TextLabel.Text = "Press Enter Please."
+        end
+        TextBox.Visible = false
+        TextLabel.Visible = true
+        task.delay(5,function()
+            TextBox.Visible = true 
+            TextLabel.Visible = false
+        end)
+    end)
+
 local namequest
 local BlackListedKillPlayers = {}
 IsBossDrop = function()
@@ -3677,6 +3762,7 @@ IsBossDrop = function()
         end
     end
 end
+
 getgenv().AutoL = function()
     if _G.QuestKillPlayer and not game:GetService("Players").LocalPlayer.PlayerGui.Main:FindFirstChild("Quest").Visible then 
         _G.QuestKillPlayer = false 
