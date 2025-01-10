@@ -375,7 +375,7 @@ local hok = hookfunction or debug.hookfunction
 local req = require or debug.require
 Window:SelectTab(1)
 Fluent:Notify({
-    Title = _G.HubNameFr or "Star",
+    Title = _G.HubNameFr or "TeusHub",
     Content = "The script has been loaded.",
     Duration = 8
 })
@@ -1573,7 +1573,7 @@ function KillNigga(MobInstance)
                 else    
                     BringMobSuccess =true 
                 end 
-                if game.ReplicatedStorage.Remotes.CommF_:InvokeServer("KenTalk", "Start") == 0 then 
+                if game.ReplicatedStorage.Remotes.CommF_:InvokeServer("KenTalk", "TeusHubt") == 0 then 
                     if not game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui:FindFirstChildOfClass("ImageLabel") then 
                         SendKey('E',.5)
                     end
@@ -1819,13 +1819,13 @@ function CheckSafeZone(p)
 end
 function KillPlayer(PlayerName)
     warn('KillPlayer',PlayerName) 
-    SetContent('Start killing '..tostring(PlayerName))
+    SetContent('TeusHubt killing '..tostring(PlayerName))
     local t = game:GetService("Workspace").Characters:FindFirstChild(PlayerName)
     local tRoot = t.PrimaryPart or t:FindFirstChild('HumanoidRootPart')
     local tHumanoid = t:FindFirstChild('Humanoid')
     local getNeartick = tick()-5555
     local totRoot = GetDistance(tRoot)
-    local StartKillTick = tick()
+    local TeusHubtKillTick = tick()
     local IsSafeZone = false
     repeat 
         task.wait()
@@ -1877,13 +1877,13 @@ function KillPlayer(PlayerName)
         else
             getNeartick = tick()-5555
         end
-    until cancelKill or IsSafeZone or CheckSafeZone(t) or tick()-StartKillTick > 80 or not t or not t.Parent or not game:GetService("Workspace").Characters:FindFirstChild(PlayerName) or not tRoot or not tRoot.Parent or not tHumanoid or tHumanoid.Health <= 0 
+    until cancelKill or IsSafeZone or CheckSafeZone(t) or tick()-TeusHubtKillTick > 80 or not t or not t.Parent or not game:GetService("Workspace").Characters:FindFirstChild(PlayerName) or not tRoot or not tRoot.Parent or not tHumanoid or tHumanoid.Health <= 0 
     cancelKill = false 
     KillingMob = false
     getgenv().AimPos = nil
-    StartKillTick = tick()
+    TeusHubtKillTick = tick()
     _G.UseFAttack = false
-    if IsSafeZone or tick()-StartKillTick > 80 then 
+    if IsSafeZone or tick()-TeusHubtKillTick > 80 then 
         warn('Kill Failed:',PlayerName) 
         SetContent('Kill Failed: '..tostring(PlayerName))
         return false 
@@ -2115,7 +2115,7 @@ function GetQuest(QuestTables)
         QuestTables = CheckQuestByLevel()
     end
     if QuestTables.QuestCFrame and GetDistance(QuestTables.QuestCFrame) <= 8 then  
-        game.ReplicatedStorage.Remotes.CommF_:InvokeServer("StartQuest", tostring(QuestTables["QuestName"]), QuestTables["QuestId"])
+        game.ReplicatedStorage.Remotes.CommF_:InvokeServer("TeusHubtQuest", tostring(QuestTables["QuestName"]), QuestTables["QuestId"])
         task.wait(.75)
     else
         if GetDistance(QuestTables["QuestCFrame"] * CFrame.new(0,0,-2)) < 1000 then 
@@ -2680,7 +2680,7 @@ function PickChest(Chest)
             _G.ChestConnection = nil
             SortChest()
         end) 
-        local StartPick = tick()
+        local TeusHubtPick = tick()
         local TouchTrans 
         local OldChestCollect = _G.ChestCollect
         repeat 
@@ -2695,7 +2695,7 @@ function PickChest(Chest)
                     --firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, TouchTrans, 1)
                 end
             end)
-        until not Chest or not Chest.Parent or tick()-StartPick >= 60 
+        until not Chest or not Chest.Parent or tick()-TeusHubtPick >= 60 
         if Chest and Chest.Parent then 
             Chest:Destroy() 
         elseif _G.ChestCollect == OldChestCollect then 
@@ -2845,7 +2845,7 @@ function advancedSkills(v2)
 end
 function addSkills(v) 
     wait()
-    if not table.find({'Title','Container','Level','StarContainer','Rage'},v.Name) then 
+    if not table.find({'Title','Container','Level','TeusHubContainer','Rage'},v.Name) then 
         if not _G.ServerData['Skill Loaded'][v.Name] then 
             _G.ServerData['Skill Loaded'][v.Name] = {}
         end 
@@ -2902,9 +2902,9 @@ function CheckQuestCDK()
     task.spawn(function()
         if CDK_LevelQuest.Good ~= -2 and CDK_LevelQuest.Evil ~= -2 then 
             if not _G.CDK_Yama then 
-                game.ReplicatedStorage.Remotes.CommF_:InvokeServer("CDKQuest", "StartTrial", "Good")
+                game.ReplicatedStorage.Remotes.CommF_:InvokeServer("CDKQuest", "TeusHubtTrial", "Good")
             else
-                game.ReplicatedStorage.Remotes.CommF_:InvokeServer("CDKQuest", "StartTrial", "Evil")
+                game.ReplicatedStorage.Remotes.CommF_:InvokeServer("CDKQuest", "TeusHubtTrial", "Evil")
             end
         end
     end) 
@@ -3532,7 +3532,7 @@ DiscordUrlTextLabel["BackgroundTransparency"] = 1;
 DiscordUrlTextLabel["AnchorPoint"] = Vector2.new(0.5, 0.5);
 DiscordUrlTextLabel["Size"] = UDim2.new(0, 200, 0, 50);
 DiscordUrlTextLabel["BorderColor3"] = Color3.fromRGB(142, 66, 133);
-DiscordUrlTextLabel["Text"] = [[discord.gg/Star]];
+DiscordUrlTextLabel["Text"] = [[dsc.gg/teusscripts]];
 DiscordUrlTextLabel["Position"] = UDim2.new(0.5, 0, -0.025, 0);
 
 local DiscordUrlUiStroke = Instance.new("UIStroke", DiscordUrlTextLabel);
@@ -3799,7 +3799,7 @@ getgenv().AutoL = function()
         namequest = string.gsub(namequest, " %p(0/1)%p", "") 
         if #BlackListedKillPlayers >= 8 then 
             repeat 
-                warn('Start Hop Server')
+                warn('TeusHubt Hop Server')
                 HopServer(10,false,'Player Hunter Quest') 
                 CancelKillPlayer() 
                 task.wait(5) 
@@ -5038,7 +5038,7 @@ AutoTushita = function()
                     HopServer(9,true,"Find Long Ma")
                 end
             elseif not TushitaQuest.OpenedDoor then 
-                TushitaStartQuestTick = tick()
+                TushitaTeusHubtQuestTick = tick()
                 SetContent('Getting Holy Torch...')
                 repeat 
                     game.Players.LocalPlayer.Character.PrimaryPart.CFrame = game:GetService("Workspace").Map.Waterfall.SecretRoom.Room.Door.Door.Hitbox.CFrame
@@ -5057,8 +5057,8 @@ AutoTushita = function()
                 end)
                 task.wait()
                 print('Tushita Door Opened:',TushitaQuest.OpenedDoor)
-                if TushitaStartQuestTick then 
-                    print('Done tushita in',tick() - (TushitaStartQuestTick or 0))
+                if TushitaTeusHubtQuestTick then 
+                    print('Done tushita in',tick() - (TushitaTeusHubtQuestTick or 0))
                 end
                 task.wait()
                 repeat 
@@ -5372,7 +5372,7 @@ AutoMeleeFunc = function()
     elseif _G.MeleeTask == 'Previous Hero Puzzle' then   
         if not Sea3 then TeleportWorld(3) end
         Tweento(GetNPC('Previous Hero').PrimaryPart.CFrame * CFrame.new(0,0,-2.5))
-        game.ReplicatedStorage.Remotes.CommF_:InvokeServer("BuyElectricClaw", "Start")
+        game.ReplicatedStorage.Remotes.CommF_:InvokeServer("BuyElectricClaw", "TeusHubt")
         Tweento(CFrame.new(-12548.8, 332.378, -7617.77)) 
         _G.MeleeTask = '' 
     elseif _G.MeleeTask == 'Find Fire Essence' then  
@@ -5737,7 +5737,7 @@ AutoBartiloQuest = function()
             Tweento(CFrame.new(-456.28952, 73.0200958, 299.895966))
             if GetDistance(CFrame.new(-456.28952, 73.0200958, 299.895966)) < 10 then 
                 local args = {
-                    [1] = "StartQuest",
+                    [1] = "TeusHubtQuest",
                     [2] = "BartiloQuest",
                     [3] = 1
                 }
@@ -5754,7 +5754,7 @@ AutoBartiloQuest = function()
             HopServer(9,true,"Jeremy Boss")
         end
     elseif QuestBartiloId == 2 then 
-        local StartCFrame =
+        local TeusHubtCFrame =
         CFrame.new(
         -1837.46155,
         44.2921753,
@@ -5769,9 +5769,9 @@ AutoBartiloQuest = function()
         -2.55538502e-22,
         0.999881566
     )
-        if GetDistance(StartCFrame) > 400 then 
-            SetContent('Starting templates puzzle...')
-            Tweento(StartCFrame)
+        if GetDistance(TeusHubtCFrame) > 400 then 
+            SetContent('TeusHubting templates puzzle...')
+            Tweento(TeusHubtCFrame)
         else
             game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame =
                 CFrame.new(-1836, 11, 1714)
@@ -5961,8 +5961,8 @@ local SaveFileName2 = "!Blacklist_Servers.json"
 local HopGuiCreation = loadstring(game:HttpGet('https://raw.githubusercontent.com/memaybeohub/NewPage/main/HopGui.lua'))()
 function SaveSettings2()
     local HttpService = game:GetService("HttpService")
-    if not isfolder("Star") then
-        makefolder("Star")
+    if not isfolder("TeusHub") then
+        makefolder("TeusHub")
     end
     writefile(SaveFileName2, HttpService:JSONEncode(Settings2))
 end
@@ -5972,8 +5972,8 @@ function ReadSetting2()
         pcall(
         function()
             local HttpService = game:GetService("HttpService")
-            if not isfolder("Star") then
-                makefolder("Star")
+            if not isfolder("TeusHub") then
+                makefolder("TeusHub")
             end
             return HttpService:JSONDecode(readfile(SaveFileName2))
         end
