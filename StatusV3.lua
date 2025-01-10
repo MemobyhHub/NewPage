@@ -1172,10 +1172,10 @@ task.spawn(function()
             if AutoRipIndraHop then  
                 for i = 1,120 do 
                     if game.ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("TushitaProgress") and game.ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("TushitaProgress").OpenedDoor then
-                        break;
+                        break
                     end
                     if _G.Config.OwnedItems['Tushita'] then 
-                        break;
+                        break
                     end
                     print('Finding Rip india sv...')
                     AutoRipIndraHop()
@@ -1703,7 +1703,7 @@ function KillMobList(MobList)
                     Tweento(v * CFrame.new(0,50,0))
                     wait(1)
                 elseif isV then 
-                    break;
+                    break
                 end
             end
         end
@@ -3414,11 +3414,11 @@ ThisiSW = RunService.Heartbeat:Connect(function()
                 if table.find(_G.ServerData["Fruits Stock"][1],v) then 
                     print("Buying: "..tostring(v))
                     game.ReplicatedStorage.Remotes.CommF_:InvokeServer("PurchaseRawFruit",v, 1==2)
-                    break;
+                    break
                 elseif table.find(_G.ServerData["Fruits Stock"][2],v) then 
                     print("Buying: "..tostring(v))
                     game.ReplicatedStorage.Remotes.CommF_:InvokeServer("PurchaseRawFruit",v, 2==2)
-                    break;
+                    break
                 end
             end
             _G.CanEatFruit = checkFruittoEat(_G.FruitSniping,_G.IncludeStored)
@@ -4185,7 +4185,7 @@ AutoMiragePuzzle = function()
                             if game.Lighting.ClockTime < 18 and game.Lighting.ClockTime > 5 then
                                 TimetoNight = (18 - game.Lighting.ClockTime)*60 
                                 TimeInS = math.floor(TimetoNight%60)
-                                TimeInM = TimetoNight//60
+                                TimeInM = TimetoNight/60
                                 if TimeInM <= 0 then 
                                     SetContent('Waiting '..tostring(TimeInS).."s to night.")
                                 else 
@@ -5226,7 +5226,7 @@ AutoSea3 = function()
                 task.spawn(function()
                     while task.wait(0.1) do 
                         local timetry = 0 
-                        if timetry > 500 then break; end 
+                        if timetry > 500 then break end 
                         timetry=1 
                         local args = {
                             [1] = "TravelZou"
